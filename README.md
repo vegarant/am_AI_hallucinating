@@ -34,17 +34,13 @@ All of these scripts have been executed with Tensorflow version 1.14.0.
 ## Setup for different sampling rates (Figure 7)
 
 1. Download and extract the desired data from the [fastMRI challenge](https://fastmri.med.nyu.edu).
-2. Modify the paths in `config.py`, so that it points towards the desired data. 
-3. Run the script `data_management.py` to generate an interable dataset.
+2. Modify the paths in `config.py`, to point towards the desired data. 
+3. Run the script `data_management.py` to generate an iterable dataset.
 4. Run the script `script_fourier_train_network_many_sampling_rates.py` to train a neural network at the desired sampling rate.
-5. Run the script `script_fourier_test_network_many_sampling_rates.py` to evaluate the traind neural network on several images. The network will use the sampling rate it is trained on.
+5. Run the script `script_fourier_test_network_many_sampling_rates.py` to evaluate the trained neural network on several images. The network will use the sampling rate it is trained on.
 
-The pytorch version used in for this code is 1.11.0.
+The PyTorch version used for this code is 1.11.0.
 
-To create the compressive sensing reconstructions, we have used the MATLAB script `Compare_sampling_patterns_fourier.m`. This script require that you have trained at least one of the networks for the different sampling rates, as the script `script_fourier_train_network_many_sampling_rates.py` stores the original MRI images as PNG files. These images are then subsequently read by the MATLAB script. 
+To create the compressive sensing reconstructions, we have used the MATLAB script `Compare_sampling_patterns_fourier.m`. This script requires you to train at least one of the networks for the different sampling rates, as the script `script_fourier_train_network_many_sampling_rates.py` stores the original MRI images as PNG files. These images are then subsequently read by the MATLAB script. 
 
 To run the script, you need to add the [cilib](https://github.com/vegarant/cilib) and [splg1](https://friedlander.io/spgl1/) packages to your MATLAB path. 
-
-
-
-
